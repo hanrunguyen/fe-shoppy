@@ -20,7 +20,8 @@ class GoogleLogin extends React.Component {
 			.then(() => {
 				const userInfo = {
 					name: ggLoginResponse.currentUser.get().getBasicProfile().getName(),
-					role: 'customer'
+					role: 'customer',
+					imageUrl: ggLoginResponse.currentUser.get().getBasicProfile().getImageUrl()
 				}
 				this.props.history.push('/');
 				authenService.setUserInfo(userInfo);
